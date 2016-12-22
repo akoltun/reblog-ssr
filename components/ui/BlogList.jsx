@@ -5,8 +5,8 @@ import BlogItem from './BlogItem';
 
 const BlogList = ({ list }) => (
   <div>
-    {list.map((item, index) => (
-      <BlogItem key={index} image={item.image}>{item.text}</BlogItem>
+    {list.map(({text, ...others}, index) => (
+      <BlogItem key={index} {...others}>{text}</BlogItem>
     ))}
   </div>
 );
